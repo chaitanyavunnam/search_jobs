@@ -1,0 +1,35 @@
+
+.filters_div {
+  height: 10vh;
+}
+
+.all_jobs_div {
+  overflow-y: scroll;
+  height: 90vh;
+}
+
+
+.single_job_card_div {
+  padding: 20px;
+  width: 33.33% !important;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.single_job_card_child {
+  background-color: rgb(255, 255, 255);
+  border-radius: 25px;
+  box-shadow: 2px 2px 5px #d1cccc70, -2px -2px 5px #4B5760;
+  transition: transform 0.3s ease;
+}
+
+.single_job_card_child:hover {
+  transform: scale(1.02);
+}
+
+.apply_btn {
+  background-color: rgb(85, 239, 196);
+  font-weight: 500;
+  color: black;
+  border-radius: 8px;
+  border: none;
+}

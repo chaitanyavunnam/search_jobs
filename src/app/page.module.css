@@ -228,3 +228,12 @@
     transform: rotate(0deg);
   }
 }
+
+.main_div {
+  background-color: white;
+  height: 100vh;
+  width: 100%;
+  overflow: scroll;
+  color: black;
+}
+
