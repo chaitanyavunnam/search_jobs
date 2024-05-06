@@ -3,6 +3,38 @@
   height: 10vh;
 }
 
+.filter_box {
+  background-color: white;
+  min-height: 38px;
+  justify-content: space-between;
+  border-radius: 4px;
+  border: 1px solid rgb(204, 204, 204);
+  
+  > div:nth-child(1) {
+    min-width: 150px;
+
+    > p {
+      color: rgb(204, 204, 204);
+      font-size: 12px;
+    }
+
+  }
+
+  > div:nth-child(2) {
+    
+    height: 100%;
+    min-width: 40px;
+  }
+}
+ 
+.filer_value {
+  background-color: rgb(230, 230, 230);
+  border-radius: 2px;
+  font-size: 12px;
+  color: black !important;
+  width: fit-content;
+}
+
 .all_jobs_div {
   overflow-y: scroll;
   height: 90vh;
