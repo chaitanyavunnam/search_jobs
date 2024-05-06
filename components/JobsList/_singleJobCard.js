@@ -39,7 +39,7 @@ export default function SingleJobCard({ data }) {
             {data.minExp} {data.minExp > 1 ? `years` : `year`}
           </p>
         </div>
-        <button className={`${Style.apply_btn} w-100 py-2`}>Easy Apply</button>
+        <button className={`${Style.apply_btn} w-100 py-2`}>⚡ Easy Apply</button>
       </div>
     </div>
   )

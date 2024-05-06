@@ -10,7 +10,7 @@ const initialState = {
       type: "Roles",
       multiSelect: true,
       options: ["Bakcend", "Frontend", "Fullstack", "IOS", "Flutter", "Android", "Frontend", "Tech lead"],
-      filterValues: ["Bakcend", "Fullstack", "IOS", "Flutter"],
+      filterValues: [],
     },
     {
       type: "No Of Employees",
@@ -31,7 +31,7 @@ const initialState = {
       filterValues: [],
     },
     {
-      type: "Min Base Pay",
+      type: "Minimum Base Pay",
       multiSelect: false,
       options: [0, 10, 20, 30, 40, 50, 60, 70],
       filterValues: [],
@@ -40,7 +40,8 @@ const initialState = {
       type: "Company Name",
       multiSelect: false,
       options: [],
-      filterValues: "",
+      filterValues: [],
+      searchValue: "",
     },
   ],
 }

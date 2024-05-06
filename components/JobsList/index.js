@@ -63,7 +63,7 @@ export default function JobsList(props) {
   }
 
   return (
-    <div className="w-100 h-100 d-flex flex-column px-4">
+    <div className="w-100 h-100 d-flex flex-column px-4 py-4">
       <div className={`d-flex align-items-center px-5 ${Style.filters_div}`}>
         <AllFilters />
       </div>

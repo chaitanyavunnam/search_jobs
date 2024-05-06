@@ -1,6 +1,11 @@
 
-.filters_div {
-  height: 10vh;
+
+.filter_lable {
+  position: absolute;
+  color: black;
+  font-size: 13px;
+  font-weight: 500;
+  top: -20px;
 }
 
 .filter_box {
@@ -11,7 +16,7 @@
   border: 1px solid rgb(204, 204, 204);
   
   > div:nth-child(1) {
-    min-width: 150px;
+    min-width: 100px;
 
     > p {
       color: rgb(204, 204, 204);
