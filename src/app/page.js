@@ -1,6 +1,5 @@
 "use client"
-import React, { useState, useEffect } from "react"
-import Image from "next/image"
+import React from "react"
 import styles from "./page.module.css"
 import { Provider } from "react-redux"
 import store from "../../Redux/store"

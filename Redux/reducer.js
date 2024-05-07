@@ -1,21 +1,16 @@
-import { SET_OFFSET, SET_JOBS, SET_JOBS_BASED_ON_FILTERS, SET_FETCHED_JOBS_DATA, SET_FILTERS_DATA } from "./actions"
+import { SET_OFFSET, SET_JOBS, SET_JOBS_BASED_ON_FILTERS, SET_FETCHED_JOBS_DATA, SET_FETCHED_NEXT_JOBS_DATA, SET_FILTERS_DATA } from "./actions"
 
 const initialState = {
   offset: 0,
   jobs: {},
   fetchedJobsData: false,
+  fetchedNextJobsData: true,
   jobsBasedOnFilter: [],
   filters: [
     {
       type: "Roles",
       multiSelect: true,
       options: ["Bakcend", "Frontend", "Fullstack", "IOS", "Flutter", "Android", "Frontend", "Tech lead"],
-      filterValues: [],
-    },
-    {
-      type: "No Of Employees",
-      multiSelect: true,
-      options: ["1-10", "11-20", "21-50", "51-100", "101-200", "201-500", "500+"],
       filterValues: [],
     },
     {
@@ -67,6 +62,11 @@ const JobsReducer = (state = initialState, action) => {
       return {
         ...state,
         fetchedJobsData: action.payload,
+      }
+    case SET_FETCHED_NEXT_JOBS_DATA:
+      return {
+        ...state,
+        fetchedNextJobsData: action.payload,
       }
     case SET_FILTERS_DATA:
       return {

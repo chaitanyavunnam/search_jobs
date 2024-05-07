@@ -1,8 +1,16 @@
 "use client"
-import React, { useEffect, useState } from "react"
+import React from "react"
 import Image from "next/image"
 
 import Style from "./jobslist.module.scss"
+
+// !definition of component
+/**
+ *
+ * @param props --> data -> data of a single job
+ * @returns Navbar component for dashboard
+ */
+// ! component
 
 export default function SingleJobCard({ data }) {
   return (
@@ -23,7 +31,7 @@ export default function SingleJobCard({ data }) {
           </div>
         </div>
         <p style={{ fontSize: "14px", fontWeight: "400", color: "rgb(77, 89, 106)" }}>
-          Estimated Salary: ₹{data.minJdSalary || 0} - {data.maxJdSalary}LPA
+          Estimated Salary: ₹{data.minJdSalary || 0} - {data.maxJdSalary} LPA
         </p>
         <div className="d-flex flex-column">
           <p className="mb-0" style={{ fontSize: "1rem", fontWeight: "500" }}>
@@ -36,7 +44,13 @@ export default function SingleJobCard({ data }) {
             Minimum Experience
           </p>
           <p style={{ fontSize: "14px" }}>
-            {data.minExp} {data.minExp > 1 ? `years` : `year`}
+            {data.minExp !== null ? (
+              <span>
+                {data.minExp} {data.minExp > 1 ? `years` : `year`}
+              </span>
+            ) : (
+              `Not Mentioned`
+            )}
           </p>
         </div>
         <button className={`${Style.apply_btn} w-100 py-2`}>⚡ Easy Apply</button>

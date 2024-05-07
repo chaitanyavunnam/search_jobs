@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { TextField, Menu, MenuItem } from "@mui/material"
+import { Menu, MenuItem } from "@mui/material"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faXmark } from "@fortawesome/free-solid-svg-icons"
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
@@ -7,32 +7,29 @@ import Style from "./jobslist.module.scss"
 import { useDispatch, useSelector } from "react-redux"
 import { SET_FILTERS_DATA } from "../../Redux/actions"
 
-const FilterField = ({ data }) => {
+// !definition of component
+/**
+ *
+ * @param props --> data, setChangedFilterOptions
+ * @returns A single filter section
+ */
+// ! component
+
+const FilterField = ({ data, setChangedFilterOptions }) => {
   const allFilters = useSelector((store) => store.filters)
   const dispatch = useDispatch()
 
   const [showFilterOptions, setShowFilterOptions] = useState(false)
   const [anchorEl, setAnchorEl] = useState(null)
-  const [inputValue, setInputValue] = useState("")
-  const [options, setOptions] = useState(["Option 1", "Option 2", "Option 3"])
 
   const handleOpen = (event) => {
+    setShowFilterOptions(true)
     setAnchorEl(event.currentTarget)
   }
 
   const handleClose = () => {
     setShowFilterOptions(false)
   }
-
-  const handleInputChange = (event) => {
-    const value = event.target.value
-    setInputValue(value)
-    if (value.trim() !== "") {
-      setAnchorEl(event.currentTarget)
-    }
-  }
-
-  const filteredOptions = options.filter((option) => option.toLowerCase().includes(inputValue.toLowerCase()))
 
   const addFilterOption = (option, option_index) => {
     const filterIndex = allFilters.findIndex((filter) => filter.type === data.type)
@@ -44,7 +41,7 @@ const FilterField = ({ data }) => {
     } else {
       copyData[filterIndex].filterValues[0] = option
     }
-
+    setChangedFilterOptions(true)
     dispatch({ type: SET_FILTERS_DATA, payload: copyData })
   }
 
@@ -58,7 +55,7 @@ const FilterField = ({ data }) => {
     } else {
       copyData[filterIndex].filterValues.splice(optionIndex, 1)
     }
-
+    setChangedFilterOptions(true)
     dispatch({ type: SET_FILTERS_DATA, payload: copyData })
   }
 
@@ -69,6 +66,7 @@ const FilterField = ({ data }) => {
     copyData[filterIndex].options = [...copyData[filterIndex].options, ...copyData[filterIndex].filterValues]
     copyData[filterIndex].filterValues = []
 
+    setChangedFilterOptions(true)
     dispatch({ type: SET_FILTERS_DATA, payload: copyData })
   }
 
@@ -78,7 +76,6 @@ const FilterField = ({ data }) => {
       <div
         className={`d-flex align-items-center ${Style.filter_box} me-2 py-1 ps-3 pe-2 mb-4`}
         onClick={(e) => {
-          setShowFilterOptions(true)
           handleOpen(e)
         }}
       >
