@@ -22,15 +22,18 @@ const FilterField = ({ data, setChangedFilterOptions }) => {
   const [showFilterOptions, setShowFilterOptions] = useState(false)
   const [anchorEl, setAnchorEl] = useState(null)
 
+  //This function is make the options dropdown expand for a filter
   const handleOpen = (event) => {
     setShowFilterOptions(true)
     setAnchorEl(event.currentTarget)
   }
 
+  //This function is to close the options dropdown for a filter
   const handleClose = () => {
     setShowFilterOptions(false)
   }
 
+  //This function is to add single filter value within a filter
   const addFilterOption = (option, option_index) => {
     const filterIndex = allFilters.findIndex((filter) => filter.type === data.type)
     const copyData = [...allFilters]
@@ -45,6 +48,7 @@ const FilterField = ({ data, setChangedFilterOptions }) => {
     dispatch({ type: SET_FILTERS_DATA, payload: copyData })
   }
 
+  //This function is to remove single filter value within a filter
   const deteleFilterOption = (option, optionIndex) => {
     const filterIndex = allFilters.findIndex((filter) => filter.type === data.type)
     const copyData = [...allFilters]
@@ -59,6 +63,7 @@ const FilterField = ({ data, setChangedFilterOptions }) => {
     dispatch({ type: SET_FILTERS_DATA, payload: copyData })
   }
 
+  //This function is to clear all the filter values of a single filter
   const clearAllFilterValues = () => {
     const filterIndex = allFilters.findIndex((filter) => filter.type === data.type)
     const copyData = [...allFilters]

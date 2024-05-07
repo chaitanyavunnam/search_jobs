@@ -22,6 +22,7 @@ export default function AllFilters() {
   const [searchValue, setSearchValue] = useState("")
   const [changedFilterOptions, setChangedFilterOptions] = useState(false)
 
+  //This useEffect is to filter the jobs based on the filters we added
   useEffect(() => {
     if (jobs?.jdList?.length > 0) {
       let filteredJobs = [...jobs.jdList]
