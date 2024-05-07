@@ -1,5 +1,3 @@
-
-
 .filter_lable {
   position: absolute;
   color: black;
@@ -40,16 +38,63 @@
   width: fit-content;
 }
 
+.search_input {
+  > input {
+    padding: 0;
+  }
+
+  > input::placeholder {
+    color: rgb(204, 204, 204);
+    opacity: 1;
+    font-size: 12px;
+  }
+}
+
 .all_jobs_div {
   overflow-y: scroll;
   height: 90vh;
 }
 
 
-.single_job_card_div {
-  padding: 20px;
-  width: 33.33% !important;
-  color: rgba(0, 0, 0, 0.87);
+/* Mobile devices (portrait and landscape) */
+@media only screen and (max-width: 767px) {
+  /* Styles for mobile devices */
+  .single_job_card_div {
+    padding: 10px;
+    width: 100% !important;
+    color: rgba(0, 0, 0, 0.87);
+  }
+}
+
+/* Tablets and small desktops */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* Styles for tablets and small desktops */
+  .single_job_card_div {
+    padding: 10px;
+    width: 50% !important;
+    color: rgba(0, 0, 0, 0.87);
+  }
+}
+
+/* Medium to large desktops */
+@media only screen and (min-width: 992px) and (max-width: 1800px) {
+  /* Styles for medium to large desktops */
+
+  .single_job_card_div {
+    padding: 20px;
+    width: 33.33% !important;
+    color: rgba(0, 0, 0, 0.87);
+  }
+}
+
+/* Extra-large desktops */
+@media only screen and (min-width: 1801px) {
+  /* Styles for extra-large desktops */
+  .single_job_card_div {
+    padding: 20px;
+    width: 25% !important;
+    color: rgba(0, 0, 0, 0.87);
+  }
 }
 
 .single_job_card_child {

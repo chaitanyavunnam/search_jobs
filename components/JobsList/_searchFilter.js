@@ -26,6 +26,7 @@ const SearchFilter = ({ searchValue, setSearchValue, setChangedFilterOptions }) 
               setSearchValue(e.target.value)
               setChangedFilterOptions(true)
             }}
+            className={`${Style.search_input} `}
             value={searchValue}
             disableUnderline={true}
           />
